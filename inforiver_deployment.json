@@ -222,12 +222,32 @@
                             "value": "[concat(parameters('administratorLogin'),'@',variables('serverName'))]"
                         },
                         {
+                            "name": "DB_NAME",
+                            "value": "postgres"
+                        },
+                        {
+                            "name": "DB_ENCRYPT",
+                            "value": "true"
+                        },
+                        {
                             "name": "REDIS_HOST",
                             "value": "[concat(variables('cacheName'),'.redis.cache.windows.net')]"
                         },
                         {
                             "name": "REDIS_PASSWORD",
                             "value": "[listKeys(resourceId('Microsoft.Cache/Redis', variables('cacheName')), '2020-12-01').primaryKey]"
+                        },
+                        {
+                            "name": "REDIS_PORT",
+                            "value": "6380"
+                        },
+                        {
+                            "name": "REDIS_TLS_ENABLED",
+                            "value": "1"
+                        },
+                        {
+                            "name": "REDIS_KEY_PREFIX",
+                            "value": "turing"
                         },
                         {
                             "name": "BOOTSTRAP_ON_PREMISE",
